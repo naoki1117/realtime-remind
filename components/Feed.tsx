@@ -10,7 +10,7 @@ export const Feed: FC = () => {
 
   return (
     <>
-      <p className="mb-4 text-center">Meeting UI</p>
+      <p className="mb-4 text-center">Discussion</p>
       <PostForm />
       <ul data-testid="ul-post" className="my-5">
         {posts?.map((post) => (

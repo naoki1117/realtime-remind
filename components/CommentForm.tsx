@@ -39,7 +39,7 @@ export const CommentFormMemo: FC<Props> = ({
       <div className="flex items-center justify-center">
         <input
           type="text"
-          className="my-2 rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none"
+          className="my-2 rounded border text-black border-gray-300 px-3 py-2 text-sm focus:outline-none"
           placeholder="New comment ?"
           value={editedComment.comment}
           onChange={(e) =>

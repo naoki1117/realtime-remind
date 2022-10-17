@@ -27,8 +27,8 @@ export const NoticeFormMemo: FC = () => {
     <form onSubmit={submitHandler}>
       <input
         type="text"
-        className="my-1 rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none"
-        placeholder="New notice ?"
+        className="my-1 rounded border text-black border-gray-300 px-3 py-2 text-sm focus:outline-none"
+        placeholder="メモを入力"
         value={editedNotice.content}
         onChange={(e) => update({ ...editedNotice, content: e.target.value })}
       />

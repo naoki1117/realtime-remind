@@ -39,8 +39,8 @@ export const PostFormMemo: FC = () => {
     <form onSubmit={submitHandler}>
       <input
         type="text"
-        className="my-1 rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none"
-        placeholder="New post ?"
+        className="my-1 rounded border text-black border-gray-300 px-3 py-2 text-sm focus:outline-none"
+        placeholder="discussion内容を入力"
         value={editedPost.title}
         onChange={(e) => update({ ...editedPost, title: e.target.value })}
       />

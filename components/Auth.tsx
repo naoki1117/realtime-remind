@@ -33,7 +33,7 @@ export const Auth: FC = () => {
           <input
             type="text"
             required
-            className="my-2 rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none"
+            className="my-2 rounded border text-black border-gray-300 px-3 py-2 text-sm focus:outline-none"
             placeholder="Email"
             value={email}
             onChange={(e) => {
@@ -45,7 +45,7 @@ export const Auth: FC = () => {
           <input
             type="password"
             required
-            className="my-2 rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none"
+            className="my-2 rounded border text-black border-gray-300 px-3 py-2 text-sm focus:outline-none"
             placeholder="Password"
             value={password}
             onChange={(e) => {
@@ -58,14 +58,14 @@ export const Auth: FC = () => {
             onClick={() => setIsLogin(!isLogin)}
             className="cursor-pointer font-medium hover:text-indigo-500"
           >
-            change mode ?
+            モード切替
           </span>
         </div>
         <button
           type="submit"
           className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-4 text-sm text-white"
         >
-          {isLogin ? 'Login' : 'Register'}
+          {isLogin ? 'ログイン' : '新規登録'}
         </button>
       </form>
     </>
