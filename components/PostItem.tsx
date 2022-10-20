@@ -37,7 +37,7 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
   )
   return (
     <>
-      <li className="w-96">
+      <li className="w-[20rem] md:w-[40rem] ">
         <div className="my-3 w-full border border-dashed border-gray-400" />
         <div className="flex items-center justify-between">
           <div className="flex">

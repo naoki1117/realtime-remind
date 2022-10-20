@@ -17,7 +17,7 @@ export const CommentsMemo: FC<Props> = ({ postId }) => {
   const { data: comments } = useQueryComments(postId)
   useSubscribeComments(postId)
   return (
-    <div className="w-96">
+    <div className="md:w-[40rem]">
       <CommentForm
         postId={postId}
         editedComment={editedComment}
