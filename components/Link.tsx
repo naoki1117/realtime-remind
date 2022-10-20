@@ -24,7 +24,7 @@ const { data: posts } = useQueryPosts()
         <Menu.Label>Application</Menu.Label>
         {posts?.map((post) => {
           return(
-            <Menu.Item key={post.id} ><a href={`#${post.id}`}>{post.title}</a></Menu.Item>
+            <Menu.Item key={post.id} ><a href={`#${post.title}`}>{post.title}</a></Menu.Item>
           )
         })}
         
