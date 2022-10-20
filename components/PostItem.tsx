@@ -52,7 +52,7 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
             ) : (
               <UserCircleIcon className="inline-block h-8 w-8 cursor-pointer text-gray-500" />
             )}
-            <span className="ml-2 font-bold">{title}</span>
+            <span id={id} className="ml-2 font-bold">{title}</span>
           </div>
           {session?.user?.id === user_id && (
             <div className="flex pr-4">
