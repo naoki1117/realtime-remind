@@ -3,6 +3,7 @@ import { useQueryPosts } from '../hooks/useQueryPosts'
 import { useSubscribePosts } from '../hooks/useSubscribePosts'
 import { PostItem } from './PostItem'
 import { PostForm } from './PostForm'
+import { Link } from './Link'
 
 export const Feed: FC = () => {
   const { data: posts } = useQueryPosts()
@@ -10,6 +11,7 @@ export const Feed: FC = () => {
 
   return (
     <>
+      <Link/>
       <p className="mb-4 text-center">Discussion</p>
       <PostForm />
       <ul data-testid="ul-post" className="my-5">
