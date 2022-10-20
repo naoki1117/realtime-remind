@@ -25,6 +25,7 @@ export const DashBoard: FC = () => {
   }
   return (
     <>
+      <p className='absolute left-1 top-1 font-bold '>LIVE</p>
       <LogoutIcon
         data-testid="logout"
         className="my-6 h-6 w-6 cursor-pointer text-blue-500"

@@ -11,6 +11,7 @@ const { data: posts } = useQueryPosts()
       <Menu shadow="md" width={200}>
       <Menu.Target>
         <Button className='absolute right-1 top-1'>
+        
         <Search
           size={24}
           strokeWidth={2}
@@ -30,6 +31,7 @@ const { data: posts } = useQueryPosts()
         
       </Menu.Dropdown>
     </Menu>
+    
     </div>
   )
 }
