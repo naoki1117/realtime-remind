@@ -30,6 +30,7 @@ export const DashBoard: FC = () => {
         className="my-6 h-6 w-6 cursor-pointer text-blue-500"
         onClick={signOut}
       />
+      
       <div className="md:grid grid-cols-5 gap-2">
         <div className="flex flex-col col-span-1 items-center">
           <ErrorBoundary
