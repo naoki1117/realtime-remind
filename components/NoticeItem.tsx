@@ -3,6 +3,7 @@ import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid'
 import useStore from '../store'
 import { Notice } from '../types'
 import { useMutateNotice } from '../hooks/useMutateNotice'
+import { Bulb } from 'tabler-icons-react';
 
 export const NoticeItemMemo: FC<Omit<Notice, 'created_at'>> = ({
   id,
@@ -14,8 +15,16 @@ export const NoticeItemMemo: FC<Omit<Notice, 'created_at'>> = ({
   const { deleteNoticeMutation } = useMutateNotice()
 
   return (
-    <li className="my-3">
-      <span>{content}</span>
+    <li className="my-3 border-dotted">
+      <span>
+        <Bulb
+          size={20}
+          strokeWidth={2}
+          color={'#b3bf40'}
+          className="float-left"
+        /> 
+        {content}
+      </span>
       {session?.user?.id === user_id && (
         <div className="float-right ml-20 flex">
           <PencilAltIcon
