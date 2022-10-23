@@ -1,4 +1,4 @@
-import { FC, Suspense } from 'react'
+import { FC, Suspense, useState } from 'react'
 import { useQueryClient } from 'react-query'
 import { ErrorBoundary } from 'react-error-boundary'
 import { LogoutIcon, ExclamationCircleIcon } from '@heroicons/react/solid'
@@ -8,12 +8,18 @@ import { Spinner } from './Spinner'
 import { UserProfile } from './userProfile'
 import { Notification } from './Notification'
 import { Feed } from './Feed'
+import { Burger } from '@mantine/core';
 
 export const DashBoard: FC = () => {
+  const [opened,setOpened] = useState(false)
+  const title = opened ? 'Close navigation' : 'Open navigation';
   const queryClient = useQueryClient()
   const resetPost = useStore((state) => state.resetEditedPost)
   const resetProfile = useStore((state) => state.resetEditedProfile)
   const resetNotice = useStore((state) => state.resetEditedNotice)
+  const onClickOpen = () => {
+    setOpened(!opened)
+  }
   const signOut = () => {
     resetPost()
     resetProfile()
@@ -25,6 +31,12 @@ export const DashBoard: FC = () => {
   }
   return (
     <>
+      <Burger
+        opened={opened}
+        onClick={onClickOpen}
+        title={title}
+        className="absolute left-2 top-10"
+      />
       <p className='absolute left-1 top-1 font-bold '>LIVE</p>
       <LogoutIcon
         data-testid="logout"
@@ -33,17 +45,18 @@ export const DashBoard: FC = () => {
       />
       
       <div className="md:grid grid-cols-5 gap-2">
-        <div className="flex flex-col col-span-1 items-center">
+        { opened ?
+        <div className="flex flex-col col-span-1 items-center bg-black text-blue animate-slide-in-left">
           <ErrorBoundary
             fallback={
               <ExclamationCircleIcon className="my-5 h-10 w-10 text-pink-500" />
             }
           >
             <Suspense fallback={<Spinner />}>
-              <UserProfile />
+              <UserProfile  />
             </Suspense>
           </ErrorBoundary>
-        </div>
+        </div>: <div className="flex flex-col col-span-1 items-center animate-slide-out-left"></div>}
          <div className="flex col-span-3 flex-col items-center">
           <ErrorBoundary
             fallback={
