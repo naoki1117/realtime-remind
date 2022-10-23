@@ -16,7 +16,7 @@ export const NoticeItemMemo: FC<Omit<Notice, 'created_at'>> = ({
   const { deleteNoticeMutation } = useMutateNotice()
 
   return (
-    <li className="my-3">
+    <li className="my-6">
       <span>
         <Bulb
           size={20}
