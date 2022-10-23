@@ -37,7 +37,7 @@ export const UserProfile: FC = () => {
         </p>
       )}
       {profile?.updated_at && (
-        <p className="text-sm">
+        <p className="text-sm before:content-['更新日:']">
           {format(new Date(profile.updated_at), 'yyyy-MM-dd HH:mm:ss')}
         </p>
       )}
