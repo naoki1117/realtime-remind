@@ -32,7 +32,7 @@ export const UserProfile: FC = () => {
     <>
       <p className="mb-4">{profile?.username}</p>
       {profile?.created_at && (
-        <p className="my-1 text-sm">
+        <p className="my-1 text-sm before:content-['登録日:']">
           {format(new Date(profile.created_at), 'yyyy-MM-dd HH:mm:ss')}
         </p>
       )}
@@ -41,7 +41,7 @@ export const UserProfile: FC = () => {
           {format(new Date(profile.updated_at), 'yyyy-MM-dd HH:mm:ss')}
         </p>
       )}
-      <p className="mt-4">Username</p>
+      <p className="mt-4">User</p>
       <input
         className="my-2 mx-2 rounded text-black border border-gray-300 px-3 py-2 text-sm focus:outline-none"
         type="text"
@@ -67,7 +67,7 @@ export const UserProfile: FC = () => {
         onClick={updateProfile}
         disabled={updateProfileMutation.isLoading || !editedProfile.username}
       >
-        {updateProfileMutation.isLoading ? 'Loading ...' : 'Update'}
+        {updateProfileMutation.isLoading ? 'Loading ...' : '更新'}
       </button>
       {avatarUrl && (
         <Image

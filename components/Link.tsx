@@ -22,10 +22,10 @@ const { data: posts } = useQueryPosts()
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Label>Application</Menu.Label>
+        <Menu.Label>Link</Menu.Label>
         {posts?.map((post) => {
           return(
-            <Menu.Item key={post.id} ><a href={`#${post.title}`} className="block">
+            <Menu.Item key={post.id} className="" ><a href={`#${post.title}`} className="block">
             <Badges
             className='float-left'
             size={20}

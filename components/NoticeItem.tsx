@@ -5,6 +5,7 @@ import { Notice } from '../types'
 import { useMutateNotice } from '../hooks/useMutateNotice'
 import { Bulb } from 'tabler-icons-react';
 
+
 export const NoticeItemMemo: FC<Omit<Notice, 'created_at'>> = ({
   id,
   content,
@@ -15,7 +16,7 @@ export const NoticeItemMemo: FC<Omit<Notice, 'created_at'>> = ({
   const { deleteNoticeMutation } = useMutateNotice()
 
   return (
-    <li className="my-3 border-dotted">
+    <li className="my-3">
       <span>
         <Bulb
           size={20}

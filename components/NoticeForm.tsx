@@ -41,7 +41,7 @@ export const NoticeFormMemo: FC = () => {
           }  px-3 py-2 text-sm text-white`}
           disabled={!editedNotice.content}
         >
-          {editedNotice.id ? 'Update' : 'Create'}
+          {editedNotice.id ? '更新' : '追加'}
         </button>
       </div>
     </form>

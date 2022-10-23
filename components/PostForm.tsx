@@ -55,7 +55,7 @@ export const PostFormMemo: FC = () => {
           }  px-3 py-2 text-sm text-white`}
           disabled={useMutateUploadPostImg.isLoading || !editedPost.title}
         >
-          {editedPost.id ? 'Update' : 'Create'}
+          {editedPost.id ? '更新' : '追加'}
         </button>
       </div>
       <div className="flex justify-center">
