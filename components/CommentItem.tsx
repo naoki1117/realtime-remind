@@ -30,17 +30,17 @@ export const CommentItemMemo: FC<Props> = ({
   const { fullUrl: avatarUrl } = useDownloadUrl(data?.avatar_url, 'avatars')
   return (
     <li className="my-3 flex items-center justify-between">
-      <div className="flex">
+      <div className="">
         {avatarUrl ? (
           <Image
             src={avatarUrl}
             alt="avatar"
-            className="rounded-full"
+            className="rounded-full float-left"
             width={25}
             height={25}
           />
         ) : (
-          <UserCircleIcon className="inline-block h-8 w-8 cursor-pointer text-gray-500" />
+          <UserCircleIcon className="inline-block  cursor-pointer text-gray-500 w-[25px] h-[25px]"  />
         )}
         <span className="mx-1 text-sm">{comment}</span>
       </div>

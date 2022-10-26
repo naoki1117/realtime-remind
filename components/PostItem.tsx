@@ -16,6 +16,7 @@ import { useQueryAvatar } from '../hooks/useQueryAvatar'
 import { useDownloadUrl } from '../hooks/useDownloadUrl'
 import { Comments } from './Comments'
 
+
 export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
   id,
   title,
@@ -26,6 +27,7 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
   const session = useStore((state) => state.session)
   const update = useStore((state) => state.updateEditedPost)
   const { data } = useQueryAvatar(user_id)
+  
   const { deletePostMutation } = useMutatePost()
   const { fullUrl: avatarUrl, isLoading: isLoadingAvatar } = useDownloadUrl(
     data?.avatar_url,
@@ -40,7 +42,7 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
       <li className="w-[20rem] md:w-[40rem] ">
         <div className="my-3 w-full border border-dashed border-gray-400" />
         <div className="flex items-center justify-between">
-          <div className="flex">
+          <div className="">
             {avatarUrl ? (
               <Image
                 src={avatarUrl}
@@ -52,7 +54,7 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
             ) : (
               <UserCircleIcon className="inline-block h-8 w-8 cursor-pointer text-gray-500" />
             )}
-            <span id={title} className="ml-2 font-bold">{title}</span>
+            <span id={title} className="ml-2 font-bold">{title}</span>{}
           </div>
           {session?.user?.id === user_id && (
             <div className="flex pr-4">
@@ -120,3 +122,5 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
   )
 }
 export const PostItem = memo(PostItemMemo)
+
+
