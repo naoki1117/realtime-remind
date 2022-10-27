@@ -44,7 +44,7 @@ export const PostItemMemo: FC<Post> = ({
       <li className="w-[20rem] md:w-[40rem] ">
         <div className="my-3 w-full border border-dashed border-gray-400" />
         <div className="flex items-center justify-between">
-          <div className="w-[680px] relative">
+          <div className="w-[680px]">
             {avatarUrl ? (
               <Image
                 src={avatarUrl}
@@ -57,7 +57,7 @@ export const PostItemMemo: FC<Post> = ({
               <UserCircleIcon className="inline-block h-8 w-8 cursor-pointer text-gray-500" />
             )}
             <span id={title} className="ml-2 font-bold">{title}</span>
-            <div className='absolute right-1 text-[10px] text-red-300'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
+            
           </div>
           {session?.user?.id === user_id && (
             <div className="flex pr-4">
@@ -101,6 +101,7 @@ export const PostItemMemo: FC<Post> = ({
           className="ml-2 h-6 w-6 cursor-pointer text-blue-500"
           onClick={() => setOpenComments(!openComments)}
         />
+        <div className=' text-[10px] text-end font-bold'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
         {openComments && (
           <ErrorBoundary
             fallback={
@@ -120,6 +121,7 @@ export const PostItemMemo: FC<Post> = ({
             </Suspense>
           </ErrorBoundary>
         )}
+        
       </li>
     </>
   )
