@@ -15,13 +15,15 @@ import { useMutatePost } from '../hooks/useMutatePost'
 import { useQueryAvatar } from '../hooks/useQueryAvatar'
 import { useDownloadUrl } from '../hooks/useDownloadUrl'
 import { Comments } from './Comments'
+import { format } from "date-fns"
 
 
-export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
+export const PostItemMemo: FC<Post> = ({
   id,
   title,
   post_url,
   user_id,
+  created_at
 }) => {
   const [openComments, setOpenComments] = useState(false)
   const session = useStore((state) => state.session)
@@ -42,7 +44,7 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
       <li className="w-[20rem] md:w-[40rem] ">
         <div className="my-3 w-full border border-dashed border-gray-400" />
         <div className="flex items-center justify-between">
-          <div className="w-[680px]">
+          <div className="w-[680px] relative">
             {avatarUrl ? (
               <Image
                 src={avatarUrl}
@@ -54,7 +56,8 @@ export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
             ) : (
               <UserCircleIcon className="inline-block h-8 w-8 cursor-pointer text-gray-500" />
             )}
-            <span id={title} className="ml-2 font-bold">{title}</span>{}
+            <span id={title} className="ml-2 font-bold">{title}</span>
+            <div className='absolute right-1 text-[10px] text-indigo-300'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
           </div>
           {session?.user?.id === user_id && (
             <div className="flex pr-4">

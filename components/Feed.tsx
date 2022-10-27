@@ -22,6 +22,7 @@ export const Feed: FC = () => {
             title={post.title}
             post_url={post.post_url}
             user_id={post.user_id}
+            created_at={post.created_at}
           />
         ))}
       </ul>

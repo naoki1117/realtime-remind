@@ -30,6 +30,7 @@ export const CommentsMemo: FC<Props> = ({ postId }) => {
             id={comment.id}
             comment={comment.comment}
             user_id={comment.user_id}
+            created_at={comment.created_at}
             setEditedComment={setEditedComment}
           />
         ))}
