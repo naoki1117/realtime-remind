@@ -22,7 +22,7 @@ export const Auth: FC = () => {
         registerMutation.mutate()
       } else{
         alert("パスワードが不正です!")
-        {console.log(process.env.PASS)}
+        {console.log(process.env.NEXT_PUBLIC_PASS)}
       }
       
     }
