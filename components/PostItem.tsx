@@ -76,7 +76,12 @@ export const PostItemMemo: FC<Post> = ({
                 data-testid="trash-post"
                 className="h-5 w-5 cursor-pointer text-blue-500"
                 onClick={() => {
+                  const res = confirm("削除してよろしいですか?")
+                  if(res==true){
                   deletePostMutation.mutate(id)
+                  } else {
+                    alert("キャンセルされました")
+                  }
                 }}
               />
             </div>

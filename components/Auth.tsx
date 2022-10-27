@@ -17,7 +17,14 @@ export const Auth: FC = () => {
     if (isLogin) {
       loginMutation.mutate()
     } else {
-      registerMutation.mutate()
+      const result = prompt("signup passwordを入力してください")
+      if(result===process.env.NEXT_PUBLIC_PASS){
+        registerMutation.mutate()
+      } else{
+        alert("パスワードが不正です!")
+        {console.log(process.env.PASS)}
+      }
+      
     }
   }
 
