@@ -106,7 +106,9 @@ export const PostItemMemo: FC<Post> = ({
           className="ml-2 h-6 w-6 cursor-pointer text-blue-500"
           onClick={() => setOpenComments(!openComments)}
         />
-        <div className=' text-[10px] text-end font-bold'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
+        <div className=' text-[10px] text-end font-bold'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}
+          <p>登録者:{data?.username}</p>
+        </div>
         {openComments && (
           <ErrorBoundary
             fallback={

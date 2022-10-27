@@ -5,7 +5,7 @@ export const useQueryAvatar = (userId: string | undefined) => {
   const getAvatarUrl = async () => {
     const { data, error } = await supabase
       .from('profiles')
-      .select('avatar_url')
+      .select('avatar_url,username')
       .eq('id', userId)
       .maybeSingle()
 

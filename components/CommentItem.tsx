@@ -32,7 +32,7 @@ export const CommentItemMemo: FC<Props> = ({
   const { deleteCommentMutation } = useMutateComment()
   const { fullUrl: avatarUrl } = useDownloadUrl(data?.avatar_url, 'avatars')
   return (
-    <li className="my-3 relative flex items-center justify-between">
+    <li className="my-6 relative flex items-center justify-between">
       <div className="">
         {avatarUrl ? (
           <Image
@@ -46,7 +46,10 @@ export const CommentItemMemo: FC<Props> = ({
           <UserCircleIcon className="inline-block  cursor-pointer text-gray-500 w-[25px] h-[25px]"  />
         )}
         <span className="mx-1 text-sm">{comment}</span>
-        <div className='absolute right-1 text-[10px] text-indigo-300'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
+        
+        <div className='absolute right-1 text-[10px] text-indigo-300'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}
+          <p>登録者:{data?.username}</p>
+        </div>
       </div>
       {session?.user?.id === user_id && (
         <div className="flex">
