@@ -7,7 +7,7 @@ export const useQueryAvatar = (userId: string | undefined) => {
       .from('profiles')
       .select('avatar_url')
       .eq('id', userId)
-      .single()
+      .maybeSingle()
 
     if (error) {
       throw new Error(error.message)
