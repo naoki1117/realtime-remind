@@ -57,7 +57,7 @@ export const PostItemMemo: FC<Post> = ({
               <UserCircleIcon className="inline-block h-8 w-8 cursor-pointer text-gray-500" />
             )}
             <span id={title} className="ml-2 font-bold">{title}</span>
-            <div className='absolute right-1 text-[10px] text-indigo-300'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
+            <div className='absolute right-1 text-[10px] text-red-300'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}</div>
           </div>
           {session?.user?.id === user_id && (
             <div className="flex pr-4">
