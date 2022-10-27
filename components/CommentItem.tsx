@@ -64,7 +64,12 @@ export const CommentItemMemo: FC<Props> = ({
             data-testid="trash-comment"
             className="h-5 w-5 cursor-pointer text-blue-500"
             onClick={() => {
-              deleteCommentMutation.mutate(id)
+              const res = confirm("削除してよろしいですか?")
+                  if(res==true){
+                    deleteCommentMutation.mutate(id)
+                  } else {
+                    alert("キャンセルされました")
+                  }
             }}
           />
         </div>
