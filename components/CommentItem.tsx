@@ -11,6 +11,8 @@ import { useQueryAvatar } from '../hooks/useQueryAvatar'
 import { useMutateComment } from '../hooks/useMutateComment'
 import { useDownloadUrl } from '../hooks/useDownloadUrl'
 import {format} from "date-fns"
+// import { useQueryChecked } from '../hooks/UseQueryChecked'
+
 
 type Props = {
   id: string
@@ -29,6 +31,8 @@ export const CommentItemMemo: FC<Props> = ({
 }) => {
   const session = useStore((state) => state.session)
   const { data } = useQueryAvatar(user_id)
+  // const { data:check } = useQueryChecked(id)
+  
   const { deleteCommentMutation } = useMutateComment()
   const { fullUrl: avatarUrl } = useDownloadUrl(data?.avatar_url, 'avatars')
   return (
