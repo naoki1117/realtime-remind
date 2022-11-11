@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import {QueryClient,QueryClientProvider} from "react-query"
 import { ReactQueryDevtools } from "react-query/devtools"
 import { MantineProvider } from '@mantine/core';
+import Head from 'next/head';
 
 const queryClient = new QueryClient({
   defaultOptions:{
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }}
   >
       <QueryClientProvider client={queryClient}>
+      <Head><meta name="robots" content="noindex" /></Head>
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false}/>
       </QueryClientProvider>
