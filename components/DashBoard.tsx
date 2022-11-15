@@ -35,9 +35,9 @@ export const DashBoard: FC = () => {
         opened={opened}
         onClick={onClickOpen}
         title={title}
-        className="absolute left-2 top-10"
+        className="fixed left-2 top-10"
       />
-      <p className='absolute left-1 top-1 font-bold '>LIVE</p>
+      {/* <p className='absolute left-1 top-1 font-bold '>LIVE</p> */}
       <LogoutIcon
         data-testid="logout"
         className="my-6 h-6 w-6 cursor-pointer text-blue-500"

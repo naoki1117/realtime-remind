@@ -7,8 +7,8 @@ export const Link = () => {
 const { data: posts } = useQueryPosts()
   useSubscribePosts()
   return (
-    <div>
-      <Menu shadow="md" width={200}>
+    <div className="fixed top-1 right-1">
+      <Menu shadow="md" width={200} >
       <Menu.Target>
         <Button className='absolute right-1 top-1'>
         

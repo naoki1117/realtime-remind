@@ -13,7 +13,7 @@ type Props = {
 export const Layout:FC<Props> = ({children,title}) => {
   
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center font-mono'>
+    <div className='flex min-h-screen flex-col items-center justify-center'>
         <Head>{title}</Head>
         <header>
         
