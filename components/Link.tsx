@@ -7,13 +7,13 @@ import { useInView } from 'react-intersection-observer';
 export const Link = () => {
   const { ref, inView } = useInView({
     // オプション
-    rootMargin: '0px', // ref要素が現れてから50px過ぎたら
+    rootMargin: '10px', // ref要素が現れてから50px過ぎたら
     triggerOnce: false, 
   });
 const { data: posts } = useQueryPosts()
   useSubscribePosts()
   return (
-    <div className="fixed top-1 right-1" >
+    <div className="fixed top-1 right-1" ref={ref} >
       <Menu shadow="md" width={200}>
         {inView && <div className='h-5 w-5 bg-white'></div>}
       <Menu.Target>
