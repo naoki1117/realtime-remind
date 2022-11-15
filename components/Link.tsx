@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 export const Link = () => {
   const { ref, inView } = useInView({
     // オプション
-    rootMargin: '1500px', // ref要素が現れてから50px過ぎたら
+    rootMargin: '0px', // ref要素が現れてから50px過ぎたら
     triggerOnce: false, 
   });
 const { data: posts } = useQueryPosts()

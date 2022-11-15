@@ -16,7 +16,7 @@ import { useQueryAvatar } from '../hooks/useQueryAvatar'
 import { useDownloadUrl } from '../hooks/useDownloadUrl'
 import { Comments } from './Comments'
 import { format } from "date-fns"
-
+import { useInView } from 'react-intersection-observer'
 
 export const PostItemMemo: FC<Post> = ({
   id,
@@ -25,6 +25,10 @@ export const PostItemMemo: FC<Post> = ({
   user_id,
   created_at
 }) => {
+  const {ref,inView} = useInView({
+    rootMargin:"10px",
+    triggerOnce:true
+  })
   const [openComments, setOpenComments] = useState(false)
   const session = useStore((state) => state.session)
   const update = useStore((state) => state.updateEditedPost)
@@ -41,7 +45,7 @@ export const PostItemMemo: FC<Post> = ({
   )
   return (
     <>
-      <li className="w-[20rem] md:w-[40rem] ">
+      <li className="w-[20rem] md:w-[40rem] ref={ref}">
         <div className="my-3 w-full border border-dashed border-gray-400" />
         <div className="flex items-center justify-between">
           <div className="w-[680px]">
@@ -108,6 +112,7 @@ export const PostItemMemo: FC<Post> = ({
         />
         <div className=' text-[10px] text-end font-bold'>登録日:{format (new Date(created_at),"yyyy-MM-dd HH:mm:ss")}
           <p>登録者:{data?.username}</p>
+          
         </div>
         {openComments && (
           <ErrorBoundary
