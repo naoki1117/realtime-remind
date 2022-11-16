@@ -29,13 +29,16 @@ export const DashBoard: FC = () => {
     queryClient.removeQueries(['notices'])
     queryClient.removeQueries(['posts'])
   }
+  if (opened) {
+    
+  }
   return (
     <>
       <Burger
         opened={opened}
         onClick={onClickOpen}
         title={title}
-        className="absolute left-2 top-10"
+        className="absolute left-2 top-10 z-40"
       />
       {/* <p className='absolute left-1 top-1 font-bold '>LIVE</p> */}
       <LogoutIcon
@@ -46,7 +49,7 @@ export const DashBoard: FC = () => {
       
       <div className="md:grid grid-cols-5 gap-2">
         { opened ?
-        <div className="flex flex-col col-span-1 items-center bg-black text-blue animate-slide-in-left">
+        <div className=" flex flex-col items-center absolute top-0 left-0 h-[100vh] w-[100vw] z-20 bg-slate-500 m-0">
           <ErrorBoundary
             fallback={
               <ExclamationCircleIcon className="my-5 h-10 w-10 text-pink-500" />
@@ -56,7 +59,7 @@ export const DashBoard: FC = () => {
               <UserProfile  />
             </Suspense>
           </ErrorBoundary>
-        </div>: <div className="flex flex-col col-span-1 items-center animate-slide-out-left"></div>}
+        </div>:<div className='col-span-1'></div> }
          <div className="flex col-span-3 flex-col items-center">
           <ErrorBoundary
             fallback={

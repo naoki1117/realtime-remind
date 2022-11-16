@@ -13,7 +13,7 @@ export const Link = () => {
 const { data: posts } = useQueryPosts()
   useSubscribePosts()
   return (
-    <div className="fixed z-10 top-1 right-1" ref={ref} >
+    <div className="fixed top-1 right-1" ref={ref} >
       <Menu shadow="md" width={200}>
         {inView && <div className='h-5 w-5 bg-white'></div>}
       <Menu.Target>

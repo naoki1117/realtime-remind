@@ -29,7 +29,7 @@ export const UserProfile: FC = () => {
     })
   }
   return (
-    <>
+    <div className='m-auto w-[400px]  text-center'>
       <p className="mb-4">{profile?.username}</p>
       {profile?.created_at && (
         <p className="my-1 text-sm before:content-['登録日:']">
@@ -81,7 +81,7 @@ export const UserProfile: FC = () => {
       {isLoading && <Spinner />}
       <div className="flex justify-center">
         <label htmlFor="avatar">
-          <CameraIcon className="my-3 h-7 w-7 cursor-pointer text-gray-500" />
+          <CameraIcon className="my-3 h-7 w-7 cursor-pointer text-black-500" />
         </label>
         <input
           className="hidden"
@@ -91,6 +91,6 @@ export const UserProfile: FC = () => {
           onChange={(e) => useMutateUploadAvatarImg.mutate(e)}
         />
       </div>
-    </>
+    </div>
   )
 }
