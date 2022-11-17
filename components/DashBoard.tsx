@@ -48,8 +48,9 @@ export const DashBoard: FC = () => {
       />
       
       <div className="md:grid grid-cols-5 gap-2">
+        <div className='flex-span-1'></div>
         { opened ?
-        <div className=" flex flex-col items-center absolute top-0 left-0 h-[100vh] w-[100vw] z-20 bg-slate-500 m-0">
+        <div className=" flex items-center translate-x-0 transition duration-700 absolute top-0 left-0 h-[100%] w-[100%] z-20 bg-slate-500 m-0">
           <ErrorBoundary
             fallback={
               <ExclamationCircleIcon className="my-5 h-10 w-10 text-pink-500" />
@@ -59,7 +60,17 @@ export const DashBoard: FC = () => {
               <UserProfile  />
             </Suspense>
           </ErrorBoundary>
-        </div>:<div className='col-span-1'></div> }
+        </div>:<div className=" flex items-center translate-x-[-100%] transition duration-700 absolute top-0 left-0 h-[100%] w-[100%] z-20 bg-slate-500 m-0">
+          <ErrorBoundary
+            fallback={
+              <ExclamationCircleIcon className="my-5 h-10 w-10 text-pink-500" />
+            }
+          >
+            <Suspense fallback={<Spinner />}>
+              <UserProfile  />
+            </Suspense>
+          </ErrorBoundary>
+        </div> }
          <div className="flex col-span-3 flex-col items-center">
           <ErrorBoundary
             fallback={
