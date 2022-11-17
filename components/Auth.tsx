@@ -2,6 +2,7 @@ import { useState, FormEvent, FC } from 'react'
 import { useMutateAuth } from '../hooks/useMutateAuth'
 import { Bolt } from 'tabler-icons-react';
 
+
 export const Auth: FC = () => {
   const [isLogin, setIsLogin] = useState(true)
   const {
@@ -29,11 +30,13 @@ export const Auth: FC = () => {
 
   return (
     <>
-    <Bolt
-    size={48}
-    strokeWidth={2}
-    color={'#40bfb2'}
-   />
+      <div className="snow">●</div>
+      <div className="snow snow2nd">●</div>
+      <Bolt
+      size={48}
+      strokeWidth={2}
+      color={'#40bfb2'}
+      />
       <form onSubmit={handleSubmit}>
         <div>
           <input
