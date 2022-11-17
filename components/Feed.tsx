@@ -8,13 +8,15 @@ import { Link } from './Link'
 export const Feed: FC = () => {
   const { data: posts } = useQueryPosts()
   useSubscribePosts()
-
+  
   return (
     <>
       <Link/>
       <p className="mb-4 text-center text-xl" >Remind</p>
       <PostForm />
+      
       <ul data-testid="ul-post" className="my-5">
+        
         {posts?.map((post) => (
           <PostItem
             key={post.id}
