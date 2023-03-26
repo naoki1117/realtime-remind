@@ -30,8 +30,6 @@ export const Auth: FC = () => {
 
   return (
     <>
-      <div className="snow">●</div>
-      <div className="snow snow2nd">●</div>
       <Bolt
       size={48}
       strokeWidth={2}
